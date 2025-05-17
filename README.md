@@ -21,7 +21,6 @@ Follow these steps to run the app locally:
    ```bash
    git clone <your-repo-url>
    cd <your-repo-folder>
-  bash```
 2. **Install Dependencies**
   ```bash
   pip install -r requirements.txt
@@ -29,4 +28,4 @@ Follow these steps to run the app locally:
 3. **Run the streamlit app**
    ```bash
    streamlit run app.py
-  ```
+   ```
