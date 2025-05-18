@@ -1,31 +1,57 @@
-# IMDb Sentiment Analysis App
+# 🎬 IMDb Sentiment Analysis App
 
-This project is a Streamlit web app that performs sentiment analysis on IMDb movie reviews using a simple Recurrent Neural Network (RNN) model built with TensorFlow.
-
----
-
-## Model Training
-
-- The sentiment analysis model is a **simple RNN**.
-- It was trained for **100 epochs**.
-- The model achieves a **validation accuracy of 87.8%** on the IMDb dataset.
+A Streamlit-based web application that analyzes the sentiment of IMDb movie reviews using a Recurrent Neural Network (RNN) built with TensorFlow.
 
 ---
 
-## Getting Started
+## 🚀 Live Demo
 
-Follow these steps to run the app locally:
+🌐 [Launch the App](https://imdbsentimentanalysis-di7qztwqhsqbixg6xk6bwg.streamlit.app/)  
 
-1. **Clone the repository** (if you haven't already):
+---
 
-   ```bash
-   git clone <your-repo-url>
-   cd <your-repo-folder>
-2. **Install Dependencies**
-  ```bash
-  pip install -r requirements.txt
-  ```
-3. **Run the streamlit app**
-   ```bash
-   streamlit run app.py
-   ```
+## 🧠 Model Details
+
+- Architecture: **Simple RNN**
+- Trained for: **100 epochs**
+- Dataset: **IMDb Movie Reviews**
+- Validation Accuracy: **87.8%**
+
+The model classifies reviews into **positive** or **negative** sentiment using a sequence-based RNN trained on preprocessed IMDb data.
+
+---
+
+## 📦 Tech Stack
+
+- Python
+- TensorFlow / Keras
+- Streamlit
+- Natural Language Processing (NLP)
+- IMDb Dataset
+
+---
+
+## 🛠️ Getting Started
+
+Follow these steps to set up the project locally:
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/manrajc13/imdb_sentiment_analysis.git
+cd imdb_sentiment_analysis
+```
+
+### 2. Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### 3. Run the streamlit app
+
+```bash
+streamlit run app.py
+```
+
+
