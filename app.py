@@ -34,22 +34,56 @@ def predict_sentiment(review):
   preprocessed_input = preprocess_text(review) 
 
   prediction = model.predict(preprocessed_input)
-  sentiment = "positive" if prediction > 0.5 else "negative"
+  sentiment = "Positive 😊" if prediction > 0.5 else "Negative 😞"
 
   return sentiment, prediction[0][0]
 
 
-## streamlit app
-import streamlit as st 
+### Streamlit app
 
-st.title("IMDB Movie Review Sentiment Analysis App")
-st.write("This app uses a pretrained RNN model to predict the sentiment of movie reviews from the IMDB dataset.")
+import streamlit as st
 
-# user_input 
-user_input = st.text_area("Enter a movie review:", "The movie was fantastic! I loved it.")
-if st.button("Predict Sentiment"):
-  sentiment, confidence = predict_sentiment(user_input)
-  st.write(f"Sentiment: {sentiment}")
-  st.write(f"Confidence: {confidence:.2f}")
+# Set page config
+st.set_page_config(page_title="🎬 IMDB Sentiment Analyzer", layout="centered", page_icon="🎥")
 
-st.write("Note: A confidence score above 0.5 indicates a positive sentiment, while a score below 0.5 indicates a negative sentiment.")
+# Custom styling
+st.markdown("""
+    <style>
+    .main {
+        background-color: #f5f7fa;
+    }
+    .stTextArea textarea {
+        font-size: 16px;
+    }
+    </style>
+""", unsafe_allow_html=True)
+
+# Title and description
+st.markdown("## 🎬 IMDB Movie Review Sentiment Analysis")
+st.markdown("Use this app to find out if a movie review expresses a **positive** or **negative** sentiment using a pretrained RNN model.")
+
+# Input box
+st.markdown("### 📝 Enter a movie review below:")
+user_input = st.text_area(" ", "The movie was fantastic! I loved it. 👌")
+
+# Predict button
+if st.button("🔍 Predict Sentiment"):
+
+    sentiment, confidence = predict_sentiment(user_input)
+    
+    st.success(f"**Sentiment:** {sentiment}")
+    st.info(f"**Confidence Score:** {confidence:.2f}")
+
+# Add explanation with an expander
+with st.expander("ℹ️ How to interpret results"):
+    st.write("""
+    - A **confidence score > 0.5** suggests **positive** sentiment.
+    - A **score < 0.5** indicates **negative** sentiment.
+    - This app uses a Recurrent Neural Network (RNN) trained on the IMDB dataset.
+    """)
+
+# Footer
+st.markdown("---")
+st.markdown("Made with ❤️ using Streamlit")
+
+
